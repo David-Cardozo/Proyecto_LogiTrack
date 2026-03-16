@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LogiTrack Frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>LogiTrack - Sistema de Gestión de Bodegas</h1>
+
+    <!-- LOGIN -->
+
+    <section>
+
+        <h2>Login</h2>
+
+        <input id="usuario" placeholder="Usuario">
+        <input id="password" type="password" placeholder="Contraseña">
+
+        <button onclick="login()">Iniciar sesión</button>
+
+        <p id="loginStatus"></p>
+
+    </section>
+
+    <!-- PRODUCTOS -->
+
+    <section>
+
+        <h2>Productos</h2>
+
+        <button onclick="listarProductos()">Listar</button>
+
+        <input id="buscarProductoId" placeholder="ID Producto">
+        <button onclick="buscarProducto()">Buscar</button>
+
+        <input id="delProductoId" placeholder="ID Producto a eliminar">
+        <button onclick="eliminarProducto()">Eliminar</button>
+
+        <h3>Crear / Actualizar</h3>
+
+        <input id="prodId" placeholder="ID (solo para actualizar)">
+        <input id="prodNombre" placeholder="Nombre">
+        <input id="prodCategoria" placeholder="Categoria">
+        <input id="prodTamano" placeholder="Tamaño">
+        <input id="prodPrecio" placeholder="Precio Mensual">
+
+        <button onclick="crearProducto()">Crear</button>
+        <button onclick="actualizarProducto()">Actualizar</button>
+
+        <pre id="resProductos"></pre>
+
+    </section>
+
+
+    <!-- BODEGAS -->
+
+    <section>
+
+        <h2>Bodegas</h2>
+
+        <button onclick="listarBodegas()">Listar</button>
+
+        <input id="buscarBodegaId" placeholder="ID Bodega">
+        <button onclick="buscarBodega()">Buscar</button>
+
+        <input id="delBodegaId" placeholder="ID Bodega a eliminar">
+        <button onclick="eliminarBodega()">Eliminar</button>
+
+        <h3>Crear / Actualizar</h3>
+
+        <input id="bodId" placeholder="ID (solo actualizar)">
+        <input id="bodNombre" placeholder="Nombre">
+        <input id="bodUbicacion" placeholder="Ubicación">
+        <input id="bodCapacidad" placeholder="Capacidad">
+        <input id="bodEncargado" placeholder="ID Encargado">
+
+        <button onclick="crearBodega()">Crear</button>
+        <button onclick="actualizarBodega()">Actualizar</button>
+
+        <pre id="resBodegas"></pre>
+
+    </section>
+
+
+    <!-- EMPLEADOS -->
+
+    <section>
+
+        <h2>Empleados</h2>
+
+        <button onclick="listarEmpleados()">Listar</button>
+
+        <input id="buscarEmpleadoId" placeholder="ID Empleado">
+        <button onclick="buscarEmpleado()">Buscar</button>
+
+        <input id="delEmpleadoId" placeholder="ID Empleado a eliminar">
+        <button onclick="eliminarEmpleado()">Eliminar</button>
+
+        <h3>Crear</h3>
+
+        <input id="empNombre" placeholder="Nombre">
+        <input id="empCargo" placeholder="Cargo">
+
+        <button onclick="crearEmpleado()">Crear</button>
+
+        <pre id="resEmpleados"></pre>
+
+    </section>
+
+
+    <!-- INVENTARIO -->
+
+    <section>
+
+        <h2>Inventario</h2>
+
+        <button onclick="listarInventarios()">Listar</button>
+
+        <input id="buscarInventarioId" placeholder="ID Inventario">
+        <button onclick="buscarInventario()">Buscar</button>
+
+        <input id="delInventarioId" placeholder="ID Inventario a eliminar">
+        <button onclick="eliminarInventario()">Eliminar</button>
+
+        <h3>Crear / Actualizar</h3>
+
+        <input id="invId" placeholder="ID (solo actualizar)">
+        <input id="invBodega" placeholder="ID Bodega">
+        <input id="invProducto" placeholder="ID Producto">
+        <input id="invCantidad" placeholder="Cantidad">
+
+        <button onclick="crearInventario()">Crear</button>
+        <button onclick="actualizarInventario()">Actualizar</button>
+
+        <pre id="resInventarios"></pre>
+
+    </section>
+
+
+    <!-- MOVIMIENTOS -->
+
+    <section>
+
+        <h2>Movimientos</h2>
+
+        <button onclick="listarMovimientos()">Listar</button>
+
+        <input id="buscarMovId" placeholder="ID Movimiento">
+        <button onclick="buscarMovimiento()">Buscar</button>
+
+        <input id="delMovId" placeholder="ID Movimiento a eliminar">
+        <button onclick="eliminarMovimiento()">Eliminar</button>
+
+        <h3>Crear / Actualizar</h3>
+
+        <input id="movId" placeholder="ID (solo actualizar)">
+        <input id="movTipo" placeholder="ENTRADA/SALIDA/TRANSFERENCIA">
+        <input id="movEmpleado" placeholder="ID Empleado">
+        <input id="movOrigen" placeholder="ID Bodega Origen">
+        <input id="movDestino" placeholder="ID Bodega Destino">
+
+        <button onclick="crearMovimiento()">Crear</button>
+        <button onclick="actualizarMovimiento()">Actualizar</button>
+
+        <pre id="resMovimientos"></pre>
+
+    </section>
+
+
+    <!-- DETALLE MOVIMIENTO -->
+
+    <section>
+
+        <h2>Detalle Movimiento</h2>
+
+        <input id="buscarDetId" placeholder="ID Detalle">
+        <button onclick="buscarDetalle()">Buscar</button>
+
+        <input id="delDetId" placeholder="ID Detalle a eliminar">
+        <button onclick="eliminarDetalle()">Eliminar</button>
+
+        <h3>Crear</h3>
+
+        <input id="detMovimiento" placeholder="ID Movimiento">
+        <input id="detProducto" placeholder="ID Producto">
+        <input id="detCantidad" placeholder="Cantidad">
+
+        <button onclick="crearDetalle()">Crear</button>
+
+        <pre id="resDetalle"></pre>
+
+    </section>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
