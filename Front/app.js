@@ -77,6 +77,52 @@ async function login() {
 
 }
 
+async function register() {
+
+    const body = {
+        nombre: regNombre.value,
+        documento: regDocumento.value,
+        correo: regCorreo.value,
+        telefono: regTelefono.value,
+        usuario: regUsuario.value,
+        contrasena: regPassword.value,
+        rol: regRol.value
+    };
+
+    const response = await fetch(API + "/auth/register", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(body)
+
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+
+        token = data.token;
+        localStorage.setItem("token", token);
+
+        document.getElementById("registerStatus").innerText =
+            "✔ Usuario registrado y logueado";
+
+        document.getElementById("loginStatus").innerText =
+            "✔ Sesión activa";
+
+    } else {
+
+        document.getElementById("registerStatus").innerText =
+            "❌ Error: " + (data.message || "No se pudo registrar");
+
+    }
+
+}
+
 
 function listarProductos() {
     request("/api/productos", "GET", null, "resProductos");

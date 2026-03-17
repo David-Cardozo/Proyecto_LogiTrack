@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Service
 public class JwtService {
-    private final String SECRET = "privatePasswordCampusProject";
+    private final String SECRET = "privatePasswordCampusProjectSuperSecretKey123";
 
     private final long EXPIRATION = 1000 * 60 * 30;
 

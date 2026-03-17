@@ -43,7 +43,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericErrors(Exception ex) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
